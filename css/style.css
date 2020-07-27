@@ -1,0 +1,53 @@
+.btn{
+    border: none;
+    border-radius: 2rem;
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    outline:none;
+    background-image: linear-gradient(90deg, hsla(217, 100%, 50%, 1) 0%, hsla(186, 100%, 69%, 1) 100%);
+}
+.btn:hover{
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+}
+
+.btn_team{
+    border: none;
+    border-radius: 2rem;
+    padding:3px 2px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    outline:none;
+    background-image: linear-gradient(90deg, hsla(217, 100%, 50%, 1) 0%, hsla(186, 100%, 69%, 1) 100%);
+}
+.btn_team:hover{
+    background: transparent;
+    border: 1px solid white;
+    color: black;
+}
+
+.btm{
+    border: none;
+    border-radius: 2rem;
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    outline:none;
+    background-image:  linear-gradient(90deg, hsla(152, 100%, 50%, 1) 0%, hsla(186, 100%, 69%, 1) 100%);
+    
+
+}
+.btm:hover{
+    background: transparent;
+    border: 1px solid white;
+    color:black;
+}
+table,td{
+    border-radius:10px;
+    border-width: 2px;
+}
