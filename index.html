@@ -1,0 +1,581 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <title>CRICKET</title>
+</head>
+<body style="background-image: url('./assets/background4.jpg');background-repeat: no-repeat;background-size: cover;">
+  <h1 style="color:aqua"><center><b>CRICKET SCORE BOARD</b></center></h1>
+<div style="margin:auto;width:100%;background:transparent;border-radius:20px;">
+
+
+<h4 style="color:blanchedalmond"><center>SELECT OVERS</center></h4>
+<select id="overs" style="margin:auto;display:block ; outline:none ; background-color:skyblue;border:2px solid blue;border-radius:10px" >
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+</select>
+
+
+
+<span style="float:left;color:white">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspFIRST BATSMAN</span>   <span style="float:right;color:white;"> SECOND BATSMAN&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span></div><br>
+
+<input id="first" type="text" size="10" name="this" value=""  style="height:40px;width:200px;outline:none;margin:auto;display:block;background-color:black;color:white;border:3px groove white;border-radius:20px;float:left;">
+
+<input id="second" type="text" size="10" style="height:40px;width:200px;outline:none;margin:auto;display:block;background-color:black;color:white;border:3px groove white;border-radius:20px;float:right;" value=>
+</div>
+<br><br>
+
+
+<center><button type="button" onclick="start();appear_two();"  class="btn">START THE GAME</button></center><br>
+<center>
+  <button onclick="innings1();" class="btn_team" >1st INNINGS OVER</button>
+  &nbsp&nbsp<button onclick="innings2();" class="btn_team" >2nd INNINGS OVER</button>
+</center>
+<table style="width:100%">
+<tr>
+<td>
+<div style="background-color:transparent; height:120px ; width:50%">
+TEAM ONE : <br>
+<span>RUNS : </span><span id="t1runs">00</span><br>
+<span>WICKETS : </span><span id="t1wickets">00</span><br>
+<span>OVERS : </span><span id="t1overs">00 </span><br><br>
+<button id="st1" onclick="team1();" class="btn_team">SHOW TEAM 1</button>
+</div>
+</td>
+<td>
+<div style="background-color:transparent ;color:white; height:120px ; width:15% ; float:right">
+    TEAM TWO : <br>
+    <span>RUNS : </span><span id="t2runs">00</span><br>
+    <span>WICKETS : </span><span id="t2wickets">00</span><br>
+    <span>OVERS : </span><span id="t2overs">00 </span><br><br>
+    <button id="st2" onclick="team2();" class="btn_team">SHOW TEAM 2</button>
+</div>
+</td>
+</tr>
+</table>
+<div id="all" style="display:none;" >
+<div style="display:block;margin:auto;background-image:url('india.png');background-repeat:no-repeat;color:white;border-radius:20px;width:75%;background-size:contain;" alt=""><br>
+
+<h1><center><font face="stencil" color="#003049">SCORE BOARD</center></h1>
+
+
+<table width="30%" border="1" align="center" style="color:black;border-color:black;border-radius:10px">
+<tr height="">
+<td align="center"><font size="6">SCORE</td>
+<td align="center"><font size="6">WKTS</td>
+</tr>
+<tr height="">
+<td align="center"><font size="10"> <a id="score">00</a></font></td>
+<td><font size="10"><a id="wkt">0</a></font></td>
+</tr>
+<tr height="">
+<td align="center" style="color: blue;">BALLS:<a id="balls">0</a></td>
+<td style="color:blue;">OVERS:<a id="overplay">0</a></td>
+</tr>
+</table><br>
+
+
+
+<table id="table" border="1" align="center" width="30%" style="color:white;">
+<tr>
+<td colspan="3">BATSMAN</td>
+<td>RUNS</td>
+<td>BALLS</td>
+</tr>
+
+<tr id="score_of_one">
+<td width="5"><button id="out" onclick="increase_out(); out_one();"style="outline:none;background-color:black;color:white;border-width:5px;border-radius:20px">OUT</button></td>
+<td id="fnb" width="40"></td>
+<td width="7"><input type="radio" name="strike" id="skone"></td>
+<td><a id="runf"></a></td>
+<td><a id="nobp_first"></a></td>
+</tr>
+
+<tr id="score_of_two">
+<td width="10%"><button id="outout" onclick="increase_out(); out_two();" style="outline:none;background-color:black;color:white;border-width:5px;border-radius:20px" >OUT</button></td>
+<td id="snb"></td>
+<td><input type="radio" name="strike" id="sktwo"></td>
+<td><a id="runs"></a></td>
+<td><a id="nobp_second"></a></td>
+</tr>
+
+</table></font><br>
+</div>
+<button style="margin:auto;display:blockstyle;display:block" class="btm" onclick="appear();">SHOW SCORES</button><br><br>
+<div id="AllScore" style="margin:auto;background-image:url('image.jpg');border-radius:20px;width:50%;display:none;" alt="" width="50">
+<font face="impact"><table border="1" align="center" style="color:white;width:50%">
+<tr>
+<td>NAME</td>
+<td>RUNS</td>
+<td>BALLS</td>
+</tr>
+<tr id="one">
+<td id="nameo"></td>
+<td id="runo"></td>
+<td id="ballon"></td>
+</tr>
+<tr id="two">
+<td id="namet"></td>
+<td id="runt"></td>
+<td id="ballt"></td>
+</tr>
+<tr id="three">
+<td id="nameth"></td>
+<td id="runth"></td>
+<td id="ballth"></td>
+</tr>
+<tr id="four">
+<td id="namefo"></td>
+<td id="runfo"></td>
+<td id="ballfo"></td>
+</tr>
+<tr id="five">
+<td id="namefi"></td>
+<td id="runfi"></td>
+<td id="ballfi"></td>
+</tr>
+<tr id="six">
+<td id="namesi"></td>
+<td id="runsi"></td>
+<td id="ballsi"></td>
+</tr>
+<tr id="seven">
+<td id="namese"></td>
+<td id="runse"></td>
+<td id="ballse"></td>
+</tr>
+<tr id="eight">
+<td id="namee"></td>
+<td id="rune"></td>
+<td id="balle"></td>
+</tr>
+<tr id="nine">
+<td id="namen"></td>
+<td id="runn"></td>
+<td id="balln"></td>
+</tr>
+<tr id="ten">
+<td id="namete"></td>
+<td id="runte"></td>
+<td id="ballte"></td>
+</tr>
+<tr id="eleven">
+<td id="nameel"></td>
+<td id="runel"></td>
+<td id="ballel"></td>
+</tr>
+</table></font><br>
+
+</div>
+</font><br>
+
+
+<div style="border-color:black;border:7px dashed black;" alt=""><br>
+<center><button id="dot" onclick="increase_dot()" style="outline:none;background-color:black;color:white;border-width:5px;border-radius:20px" >DOT</button>
+<button id="single" onclick="increase(); change_strike();" style="outline:none;background-color:black;color:white;border-width:5px;border-radius:20px">SINGLE</button>
+<button id="double" onclick="increase_two()" style="outline:none;background-color:black;color:white;border-width:5px;border-radius:20px">DOUBLE</button>
+<button id="four" onclick="increase_four()" style="outline:none;background-color:black;color:white;border-width:5px;border-radius:20px">FOUR</button>
+<button id="six" onclick="increase_six()" style="outline:none;background-color:black;color:white;border-width:5px;border-radius:20px">SIX</button>
+<br>
+<center><button id="wide" onclick="increase_wide()" style="outline:none;background-color:black;color:white;border-width:5px;border-radius:20px">WIDE</button>
+<button id="noball" onclick="increase_no()" style="outline:none;background-color:black;color:white;border-width:5px;border-radius:20px">NO-BALL</button>
+<button id="bye" style="outline:none;background-color:black;color:white;border-width:5px;border-radius:20px">BYE</button><br>
+<button id="overover" onclick="increase_over(); change_strike();" style="outline:none;background-color:black;color:white;border-width:5px;border-radius:20px">OVER</button></center>
+</div>
+</div>
+</div><br><br>
+</div>
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+alert("THIS CRICKET SCORE BOARD IS CREATED BY ashishjha0603");
+alert("Enter the two batsman names and give any one batsman strike\n and keep on run moving by clicing the run buttons");
+
+
+ //srrings variables#############################
+ var d="*";
+ var f="";
+ var j="out";
+ // To store all the strike#################
+ //##################################################
+ //##################################################
+ //##################################################
+ var skone=document.getElementById("skone").checked;
+ var sktwo=document.getElementById("sktwo").checked;
+ var OnStrike=[skone,sktwo];
+ //to store batsman name############################
+ //##################################################
+ //##################################################
+ //##################################################
+ var fnb=document.getElementById("fnb");
+ var snb=document.getElementById("snb");
+ var noofbatsman=[fnb,snb];
+ //To store runs of batsman####################################
+ //##################################################
+ //##################################################
+ var runf=document.getElementById("runf");
+ var runs=document.getElementById("runs");
+ var RunBat=[runf,runs];
+ //##################################################
+ //##################################################
+ //##################################################
+ //To store ball played by batsmen###################################
+ 
+ var ballo=document.getElementById("nobp_first");
+ var balls=document.getElementById("nobp_second");
+ var ballsp=[ballo,balls];
+ //##################################################
+ //##################################################
+ //##################################################
+ //##################################################
+ var nameo=document.getElementById("nameo");
+ var namet=document.getElementById("namet");
+ var nameth=document.getElementById("nameth");
+ var namefo=document.getElementById("namefo");
+ var namefi=document.getElementById("namefi");
+ var namesi=document.getElementById("namesi");
+ var namese=document.getElementById("namese");
+ var namee=document.getElementById("namee");
+ var namen=document.getElementById("namee");
+ var namete=document.getElementById("namen");
+ var nameel=document.getElementById("nameel");
+//##################################################
+ //##################################################
+ //##################################################
+ //##################################################
+var runo=document.getElementById("runo");          
+var runt=document.getElementById("runt");
+var runth=document.getElementById("runth");
+var runfo=document.getElementById("runfo");
+var runfi=document.getElementById("runfi");
+var runsi=document.getElementById("runsi");
+var runse=document.getElementById("runse");
+var rune=document.getElementById("rune");
+var runn=document.getElementById("runn");
+var runte=document.getElementById("runtr");
+var runel=document.getElementById("runel");  
+  //##################################################
+  //##################################################
+  //##################################################
+  //##################################################
+var ballon=document.getElementById("ballon");  
+var ballt=document.getElementById("ballt");
+var ballth=document.getElementById("ballth");
+var ballfo=document.getElementById("ballfo");
+var ballfi=document.getElementById("ballfi");
+var ballsi=document.getElementById("ballsi");
+var ballse=document.getElementById("ballse");
+var balle=document.getElementById("balle");
+var balln=document.getElementById("balln");
+var ballte=document.getElementById("ballte");
+var ballel=document.getElementById("ballel");
+  //##################################################
+  //##################################################
+  //##################################################
+  //##################################################
+  
+  
+  
+  
+  
+function start(){
+var start=document.getElementById("first").value;
+var openb=document.getElementById("fnb");
+openb.innerHTML=start;
+var second=document.getElementById("second").value;
+var secondb=document.getElementById("snb");
+secondb.innerHTML=second;
+}
+
+
+var i=0;
+var ia=0;
+var ib=0;
+var b=0;
+var ba=0;
+var bb=0;
+var c=0;
+var e=0;
+var g=0;
+var h=0;
+var k=0;
+var n=0;
+var p=0;
+var q=1;
+
+
+
+
+function ballp(){
+b+=1;
+var ball_one=document.getElementById("balls").innerHTML=b;
+if(document.getElementById("skone").checked == true){
+ba+=1;
+document.getElementById("nobp_first").innerHTML=ba;
+}
+if(document.getElementById("sktwo").checked == true){
+bb+=1;
+document.getElementById("nobp_second").innerHTML=bb;
+}
+}
+
+
+function change_strike(){
+if(document.getElementById("skone").checked == true){
+document.getElementById("sktwo").checked=true;
+}
+else if(document.getElementById("sktwo").checked == true){
+document.getElementById("skone").checked=true;
+}
+}
+
+
+
+
+
+
+function increase(){
+i+=1;
+var y=document.getElementById("score").innerHTML=i;
+ballp();
+if(document.getElementById("skone").checked == true){
+ia+=1;
+runf.innerHTML=ia;
+}
+if(document.getElementById("sktwo").checked == true){
+ib+=1;
+runs.innerHTML=ib;
+}
+}
+
+
+function increase_two(){
+i+=2;
+var z=document.getElementById("score").innerHTML=i;
+ballp();
+if(document.getElementById("skone").checked == true){
+ia+=2;
+runf.innerHTML=ia;
+}
+if(document.getElementById("sktwo").checked == true){
+ib+=2;
+runs.innerHTML=ib;
+}
+}
+
+function increase_dot(){
+ballp();
+}
+
+function increase_four(){
+i+=4;
+var four=document.getElementById("score").innerHTML=i;
+ballp();
+if(document.getElementById("skone").checked == true){
+ia+=4;
+runf.innerHTML=ia;
+}
+if(document.getElementById("sktwo").checked == true){
+ib+=4;
+runs.innerHTML=ib;
+}
+}
+
+function increase_six(){
+i+=6;
+var six=document.getElementById("score").innerHTML=i;
+ballp();
+if(document.getElementById("skone").checked == true){
+ia+=6;
+runf.innerHTML=ia;
+}
+if(document.getElementById("sktwo").checked == true){
+ib+=6;
+runs.innerHTML=ib;
+}
+}
+
+function increase_wide(){
+i+=1;
+var six=document.getElementById("score").innerHTML=i;
+}
+
+function increase_no(){
+i+=1;
+var six=document.getElementById("score").innerHTML=i;
+}
+
+function increase_out(){
+c+=1;
+k+=1;
+n+=1;
+var six=document.getElementById("wkt").innerHTML=c;
+
+ballp();
+if(c==10){
+document.getElementById("out").onclick="";
+document.getElementById("outout").onclick="";
+document.getElementById("dot").onclick="";
+document.getElementById("single").onclick="";
+document.getElementById("double").onclick="";
+document.getElementById("four").onclick="";
+document.getElementById("six").onclick="";
+document.getElementById("overover").onclick="";
+document.getElementById("noball").onclick="";
+document.getElementById("wide").onclick="";
+}
+}
+
+function out_one(){
+var m=prompt("ENTER THE NEXT BATSMAN NAME");
+switch(k){
+case 1:nameo.innerHTML=fnb.innerHTML;noofbatsman[0].innerHTML=m;
+runo.innerHTML=runf.innerHTML;ballon.innerHTML=ballo.innerHTML;
+break;
+case 2:namet.innerHTML=fnb.innerHTML;noofbatsman[0].innerHTML=m;
+runt.innerHTML=runf.innerHTML;ballt.innerHTML=ballo.innerHTML;
+break;
+case 3:nameth.innerHTML=fnb.innerHTML;noofbatsman[0].innerHTML=m;
+runth.innerHTML=runf.innerHTML;ballth.innerHTML=ballo.innerHTML;
+break;
+case 4:namefo.innerHTML=fnb.innerHTML;noofbatsman[0].innerHTML=m;
+runfo.innerHTML=runf.innerHTML;ballfo.innerHTML=ballo.innerHTML;
+break;
+case 5:namefi.innerHTML=fnb.innerHTML;noofbatsman[0].innerHTML=m;
+runfi.innerHTML=runf.innerHTML;ballfi.innerHTML=ballo.innerHTML;
+break;
+case 6:namesi.innerHTML=fnb.innerHTML;noofbatsman[0].innerHTML=m;
+runsi.innerHTML=runf.innerHTML;ballsi.innerHTML=ballo.innerHTML;
+break;
+case 7:namese.innerHTML=fnb.innerHTML;noofbatsman[0].innerHTML=m;
+runse.innerHTML=runf.innerHTML;ballse.innerHTML=ballo.innerHTML;
+break;
+case 8:namee.innerHTML=fnb.innerHTML;noofbatsman[0].innerHTML=m;
+rune.innerHTML=runf.innerHTML;balle.innerHTML=ballo.innerHTML;
+break;
+case 9:namete.innerHTML=fnb.innerHTML;noofbatsman[0].innerHTML=m;
+runn.innerHTML=runf.innerHTML;balln.innerHTML=ballo.innerHTML;
+break;
+case 10:nameel.innerHTML=fnb.innerHTML;alert("ALL OUT");
+runtr.innerHTML=runf.innerHTML;ballte.innerHTML=ballo.innerHTML;
+break;
+}
+return ba=0,ia=0;
+
+}
+function out_two(){
+var m=prompt("ENTER THE NEXT BATSMAN NAME");
+switch(k){
+case 1:nameo.innerHTML=snb.innerHTML;noofbatsman[1].innerHTML=m;
+runo.innerHTML=runs.innerHTML;ballon.innerHTML=balls.innerHTML;
+break;
+case 2:namet.innerHTML=snb.innerHTML;noofbatsman[1].innerHTML=m;
+runt.innerHTML=runs.innerHTML;ballt.innerHTML=balls.innerHTML;
+break;
+case 3:nameth.innerHTML=snb.innerHTML;noofbatsman[1].innerHTML=m;
+runth.innerHTML=runs.innerHTML;ballth.innerHTML=balls.innerHTML;
+break;
+case 4:namefo.innerHTML=snb.innerHTML;noofbatsman[1].innerHTML=m;
+runfo.innerHTML=runs.innerHTML;ballfo.innerHTML=balls.innerHTML;
+break;
+case 5:namefi.innerHTML=snb.innerHTML;noofbatsman[1].innerHTML=m;
+runfi.innerHTML=runs.innerHTML;ballfi.innerHTML=balls.innerHTML;
+break;
+case 6:namesi.innerHTML=snb.innerHTML;noofbatsman[1].innerHTML=m;
+runsi.innerHTML=runs.innerHTML;ballsi.innerHTML=balls.innerHTML;
+break;
+case 7:namese.innerHTML=snb.innerHTML;noofbatsman[1].innerHTML=m;
+runse.innerHTML=runs.innerHTML;ballse.innerHTML=balls.innerHTML;
+break;
+case 8:namee.innerHTML=snb.innerHTML;noofbatsman[1].innerHTML=m;
+rune.innerHTML=runs.innerHTML;balle.innerHTML=balls.innerHTML;
+break;
+case 9:namete.innerHTML=snb.innerHTML;noofbatsman[1].innerHTML=m;
+runn.innerHTML=runs.innerHTML;balln.innerHTML=balls.innerHTML;
+break;
+case 10:nameel.innerHTML=snb.innerHTML;alert("ALL OUT");
+runtr.innerHTML=runs.innerHTML;ballte.innerHTML=balls.innerHTML;
+break;
+}
+return bb=0,ib=0;
+
+}
+function increase_over(){
+g+=1;
+n+=1;
+var over=document.getElementById("overplay").innerHTML=g;
+}
+
+function appear(){
+p+=1;
+if(p%2!=0){
+document.getElementById("AllScore").style.display="block";}
+if(p%2==0){
+document.getElementById("AllScore").style.display="none";}
+}
+
+function appear_two(){
+document.getElementById("all").style.display="block";
+}
+
+function team1()
+{
+var totalovr = document.getElementById("overs").value;
+var  ovr = document.getElementById("overplay").innerHTML;
+document.getElementById("t1overs").innerHTML=ovr;
+var wicket = document.getElementById("wkt").innerHTML;
+document.getElementById("t1wickets").innerHTML=wicket;
+var runs = document.getElementById("score").innerHTML;
+document.getElementById("t1runs").innerHTML=runs;
+}
+
+function innings1()
+{
+   b=0;
+   i=0;
+   document.getElementById("overplay").innerHTML=0;
+   document.getElementById("wkt").innerHTML=0;
+   document.getElementById("score").innerHTML=0;
+   document.getElementById("balls").innerHTML=0;
+   document.getElementById("st1").disabled = true;
+
+}
+
+function team2()
+{
+  var totalovr = document.getElementById("overs").value;
+var  ovr = document.getElementById("overplay").innerHTML;
+document.getElementById("t2overs").innerHTML=ovr;
+var wicket = document.getElementById("wkt").innerHTML;
+document.getElementById("t2wickets").innerHTML=wicket;
+var runs = document.getElementById("score").innerHTML;
+document.getElementById("t2runs").innerHTML=runs;
+}
+function innings2()
+{
+   b=0;
+   i=0;
+   document.getElementById("overplay").innerHTML=0;
+   document.getElementById("wkt").innerHTML=0;
+   document.getElementById("score").innerHTML=0;
+   document.getElementById("balls").innerHTML=0;
+   document.getElementById("st2").disabled = true;
+
+}
+</script>
